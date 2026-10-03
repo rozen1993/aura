@@ -10,7 +10,6 @@
 @layer components {
   .photo { @apply relative m-0 overflow-hidden; background:var(--blush); }
   .photo img { @apply h-full w-full object-cover; }
-  .photo figcaption { @apply absolute bottom-2 left-2 rounded-full px-2 py-1 text-[9px]; color:var(--ink);background:#fffdf4ed; }
   .hero-photo > .photo, .portrait > .photo, .feature > .photo { @apply h-full; }
   .hero-photo > .photo { position:absolute;inset:0; }
   .service-card .photo { @apply h-[225px]; }

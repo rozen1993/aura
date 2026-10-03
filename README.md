@@ -1,4 +1,4 @@
-﻿# AURA Studio
+# AURA
 
 Web estática con Astro, Tailwind CSS y TypeScript: 22 páginas, galería filtrable, comparador y consulta de disponibilidad en tres pasos. Conserva el diseño original y sus fuentes Georgia y Arial.
 
@@ -50,6 +50,6 @@ El formulario valida fecha en America/Lima, hora, cantidad de personas, lugar, t
 
 Sin WhatsApp del negocio, permite copiar la consulta. Con un número internacional válido configurado, abre WhatsApp con el mensaje preparado y la persona decide enviarlo. La consulta no confirma una reserva.
 
-Pendientes comerciales: marca y logo definitivos, WhatsApp, ubicación y cobertura, horarios, precios e inclusiones aprobadas, fotos reales autorizadas, duración de retoques Luxury, pagos, cancelaciones y políticas finales.
+Marca confirmada: AURA. Tres propuestas de identidad están en public/brand/propuestas.html. Pendientes comerciales: logo definitivo, WhatsApp, ubicación y cobertura, horarios, precios e inclusiones aprobadas, fotos reales autorizadas, duración de retoques Luxury, pagos, cancelaciones y políticas finales.
 
 El modo de revisión conserva `noindex`, bloquea robots y muestra avisos de referencia. Privacidad y condiciones están marcadas como borradores. Desactiva `reviewMode` solo tras aprobar y completar el contenido; las imágenes de galería requieren aprobación para mostrarse fuera de revisión.

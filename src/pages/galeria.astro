@@ -18,7 +18,7 @@ let trigger: HTMLButtonElement | null = null;
 document.querySelectorAll<HTMLButtonElement>('[data-image]').forEach(button => button.addEventListener('click',() => {
 trigger=button;const image=dialog.querySelector('img')!;image.src=button.dataset.src!;image.alt=button.querySelector('img')!.alt;
 dialog.querySelector('#lightbox-title')!.textContent=button.dataset.title!;
-dialog.querySelector('#lightbox-description')!.textContent=`${button.dataset.category} · ${button.querySelector('figcaption') ? 'Imagen ilustrativa creada con IA' : 'Galería'}`;
+dialog.querySelector('#lightbox-description')!.textContent=button.dataset.category!;
 dialog.showModal();
 }));
 dialog.querySelector('button')!.addEventListener('click',() => dialog.close());

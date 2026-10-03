@@ -8,5 +8,4 @@ const illustrative = photo?.illustrative || site.reviewMode;
 ---
 <figure class:list={['photo',className]}>
   <img src={photo?.src || `/images/${id}.webp`} srcset={photo?.srcset} sizes={sizes} alt={`${illustrative ? 'Imagen ilustrativa: ' : ''}${alt}`} width={photo?.width || 800} height={photo?.height || 1000} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} style={`object-position:${focal || photo?.focal || 'center'}`} />
-  {illustrative && <figcaption>Imagen ilustrativa · IA</figcaption>}
 </figure>
