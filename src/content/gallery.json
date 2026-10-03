@@ -1,0 +1,38 @@
+[
+  {
+    "id": "hero",
+    "name": "Romance bridal",
+    "category": "Novias",
+    "approved": false
+  },
+  {
+    "id": "xv",
+    "name": "Un momento para brillar",
+    "category": "Quinceañeras",
+    "approved": false
+  },
+  {
+    "id": "makeup",
+    "name": "Piel luminosa",
+    "category": "Maquillaje",
+    "approved": false
+  },
+  {
+    "id": "peinado",
+    "name": "Detalles que enamoran",
+    "category": "Peinados",
+    "approved": false
+  },
+  {
+    "id": "social",
+    "name": "Una mirada protagonista",
+    "category": "Social",
+    "approved": false
+  },
+  {
+    "id": "novia",
+    "name": "El comienzo de tu historia",
+    "category": "Novias",
+    "approved": false
+  }
+]

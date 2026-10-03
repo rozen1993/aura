@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Intro from '../../components/Intro.astro';
+import Services from '../../components/Services.astro';
+import CTA from '../../components/CTA.astro';
+const universes = [['Beauty','Maquillaje, peinado y looks para tus eventos.','/servicios/maquillaje'],['Bridal','Prueba previa y preparación para tu matrimonio.','/novias'],['XV','Una experiencia diseñada para tus quince años.','/quinceaneras']];
+---
+<Layout title="Servicios de maquillaje y peinado" description="Explora maquillaje, peinado, novias, quinceañeras y eventos especiales. Elige tu servicio o consulta por una experiencia completa."><Intro label="Servicios" title="Cada ocasión tiene<br><em>su propio brillo.</em>" description="Descubre maquillaje, peinado y experiencias especiales. Podemos combinar los servicios para crear tu look completo."/><section class="section"><Services/></section><div class="band"><section class="section"><div class="section-head"><h2>Tres universos, una esencia</h2></div><div class="universe-cards">{universes.map(([h,t,r]) => <article><span class="eyebrow">Una experiencia para ti</span><h3>{h}</h3><p>{t}</p><a class="link" href={r}>Explorar →</a></article>)}</div></section></div><CTA/></Layout>

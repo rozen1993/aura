@@ -1,0 +1,198 @@
+{
+  "brand": "AURA Studio",
+  "brandStatus": "provisional",
+  "locale": "es-PE",
+  "currency": "PEN",
+  "timezone": "America/Lima",
+  "whatsapp": null,
+  "instagram": null,
+  "address": null,
+  "city": null,
+  "businessHours": null,
+  "packages": [
+    {
+      "id": "social",
+      "name": "Social",
+      "universe": "beauty",
+      "eyebrow": "UN EVENTO, TU ESTILO",
+      "summary": "Un maquillaje pensado para acompañarte en tu ocasión especial.",
+      "includes": [
+        "Asesoría del look",
+        "Preparación de piel",
+        "Maquillaje social",
+        "Pestañas opcionales según el look",
+        "Fijación final"
+      ],
+      "excludes": [
+        "Peinado",
+        "Prueba previa",
+        "Traslado"
+      ],
+      "audience": "Invitadas, graduaciones, cumpleaños y reuniones.",
+      "trial": false,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "signature",
+      "name": "Signature",
+      "universe": "beauty",
+      "eyebrow": "EL LOOK COMPLETO",
+      "summary": "Maquillaje y peinado en armonía, con una sola experiencia.",
+      "includes": [
+        "Asesoría de maquillaje y peinado",
+        "Preparación de piel",
+        "Maquillaje personalizado",
+        "Pestañas según el look",
+        "Peinado personalizado",
+        "Fijación final",
+        "Kit básico de retoque"
+      ],
+      "excludes": [
+        "Prueba previa",
+        "Accesorios de cabello",
+        "Traslado"
+      ],
+      "audience": "Invitadas y protagonistas de eventos especiales.",
+      "trial": false,
+      "highlight": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "xv-experience",
+      "name": "XV Experience",
+      "universe": "xv",
+      "eyebrow": "TU MOMENTO DE BRILLAR",
+      "summary": "Un look fresco y especial para celebrar tus quince años.",
+      "includes": [
+        "Consulta con quinceañera y responsable",
+        "Prueba de maquillaje y peinado",
+        "Diseño del look",
+        "Maquillaje y peinado el día del evento",
+        "Pestañas según el look",
+        "Colocación de accesorio aportado por la clienta",
+        "Kit básico de retoque"
+      ],
+      "excludes": [
+        "Compra de tocado",
+        "Retoques durante el evento",
+        "Servicios de acompañantes",
+        "Traslado"
+      ],
+      "audience": "Quinceañeras que desean definir su look con anticipación.",
+      "trial": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "bridal",
+      "name": "Bridal",
+      "universe": "bridal",
+      "eyebrow": "PARA TU SÍ, ACEPTO",
+      "summary": "Una experiencia que empieza en la prueba y culmina en tu gran día.",
+      "includes": [
+        "Consulta de estilo",
+        "Prueba de maquillaje y peinado",
+        "Diseño según vestido y ceremonia",
+        "Preparación de piel",
+        "Maquillaje de novia",
+        "Peinado de novia",
+        "Pestañas según el look",
+        "Colocación de velo o accesorio aportado",
+        "Kit básico de retoque"
+      ],
+      "excludes": [
+        "Permanencia durante el evento",
+        "Servicios de familiares",
+        "Compra de accesorios",
+        "Traslado"
+      ],
+      "audience": "Novias que buscan una preparación personalizada.",
+      "trial": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "bridal-luxury",
+      "name": "Bridal Luxury",
+      "universe": "bridal",
+      "eyebrow": "CADA DETALLE, CONTIGO",
+      "summary": "La experiencia Bridal con atención adicional para los momentos que elijas.",
+      "includes": [
+        "Todo lo incluido en Bridal",
+        "Maquillaje social para dos acompañantes",
+        "Bloque de retoques coordinado previamente",
+        "Kit de retoque ampliado",
+        "Coordinación del orden de preparación"
+      ],
+      "excludes": [
+        "Peinado de acompañantes",
+        "Segundo cambio completo de look",
+        "Traslado"
+      ],
+      "audience": "Novias que desean ampliar la atención para ellas y su familia.",
+      "trial": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "bride-tribe",
+      "name": "Bride Tribe",
+      "universe": "grupal",
+      "eyebrow": "JUNTAS DESDE EL INICIO",
+      "summary": "La novia y tres acompañantes, con una preparación coordinada.",
+      "includes": [
+        "Experiencia Bridal para la novia",
+        "Maquillaje social para tres acompañantes",
+        "Plan de preparación del grupo"
+      ],
+      "excludes": [
+        "Peinado de acompañantes",
+        "Personas adicionales",
+        "Traslado"
+      ],
+      "audience": "Novia, mamá, madrina, hermana o damas.",
+      "trial": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    },
+    {
+      "id": "sweet-xv-party",
+      "name": "Sweet XV Party",
+      "universe": "grupal",
+      "eyebrow": "UN RECUERDO COMPARTIDO",
+      "summary": "Quinceañera, mamá y dos acompañantes, listas para celebrar.",
+      "includes": [
+        "XV Experience para la quinceañera",
+        "Maquillaje social para mamá y dos acompañantes",
+        "Plan de preparación del grupo"
+      ],
+      "excludes": [
+        "Peinado de acompañantes",
+        "Personas adicionales",
+        "Traslado"
+      ],
+      "audience": "Quinceañera y su familia.",
+      "trial": true,
+      "price": null,
+      "currency": "PEN",
+      "priceMode": "cotizar",
+      "availability": "por_confirmar"
+    }
+  ],
+  "imagesStatus": "Imágenes editoriales creadas con IA. Modelos ficticias e interior conceptual; no son clientas ni portafolio real.",
+  "testimonials": []
+}

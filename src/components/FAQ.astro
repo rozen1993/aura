@@ -1,0 +1,5 @@
+---
+import faqs from '../content/faqs.json';
+const {all = true} = Astro.props;
+---
+<div class="faq">{faqs.slice(0,all ? faqs.length : 4).map(([q,a]) => <details><summary>{q}</summary><p>{a}</p></details>)}</div>

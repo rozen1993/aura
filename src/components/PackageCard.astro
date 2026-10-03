@@ -1,0 +1,8 @@
+---
+import {priceLabel, type Package} from '../content/business';
+interface Props { p: Package }
+const {p} = Astro.props;
+---
+<article class:list={['package-card',{'featured':p.highlight}]} data-universe={p.universe}>
+{p.highlight && <span class="tag">Look completo</span>}<span class="eyebrow">{p.eyebrow}</span><h3>{p.name}</h3><p>{p.summary}</p><ul>{p.includes.slice(0,4).map(item => <li>{item}</li>)}</ul><p class="price">{priceLabel(p)}</p>{p.priceMode === 'desde' && p.price !== null && <small>Base del paquete; traslado y adicionales se cotizan por separado.</small>}<a class:list={['button',{'outline':!p.highlight}]} href={`/paquetes/${p.id}`}>Ver experiencia ↗</a>
+</article>

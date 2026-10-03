@@ -1,0 +1,94 @@
+@reference "./global.css";
+@theme {
+  --color-ivory: #fbf7f3;
+  --color-blush: #f2e4df;
+  --color-terracotta: #a45b62;
+  --color-ink: #3a2825;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: Arial, sans-serif;
+}
+@layer components {
+  .photo { @apply relative m-0 overflow-hidden; background:var(--blush); }
+  .photo img { @apply h-full w-full object-cover; }
+  .photo figcaption { @apply absolute bottom-2 left-2 rounded-full px-2 py-1 text-[9px]; color:var(--ink);background:#fffdf4ed; }
+  .hero-photo > .photo, .portrait > .photo, .feature > .photo { @apply h-full; }
+  .hero-photo > .photo { position:absolute;inset:0; }
+  .service-card .photo { @apply h-[225px]; }
+  .editorial-grid .photo { @apply h-[390px] rounded-2xl; }
+  .gallery-item .photo { @apply h-[380px] rounded-2xl; }
+  .gallery-item:nth-child(3n+2) .photo { @apply h-[480px]; }
+  .gallery-item img { @apply h-full; }
+  .booking-art > .photo { @apply h-[330px]; }
+  .section { @apply w-full; }
+  .button { @apply min-h-12; }
+  .service-grid { @apply grid grid-cols-5; }
+  .package-grid { @apply grid grid-cols-4; }
+  .duo, .split { @apply grid grid-cols-2; }
+  .gallery, .editorial-grid, .contact-grid, .universe-cards { @apply grid grid-cols-3; }
+  [hidden] { display:none!important; }
+  [aria-current="page"] { color:var(--rose);text-decoration:underline;text-underline-offset:8px; }
+  .form-progress { @apply list-none p-0; }
+  .form-progress li { @apply flex-1 border-t-[3px] border-[var(--line)] pt-2 text-[11px];color:var(--muted); }
+  .form-progress li.current, .form-progress li[aria-current] { border-color:var(--rose);color:var(--rose); }
+  fieldset { @apply m-0 min-w-0 border-0 p-0; }
+  input, select, textarea { @apply text-base min-w-0; }
+  .field-error { @apply text-[13px];color:#a3323e; }
+  .field-error:empty { display:none; }
+  [aria-invalid="true"] { border-color:#a3323e; }
+  .summary-list dt { @apply text-xs; color:var(--muted); }
+  .summary-list dd { @apply m-0 break-words; }
+  .summary-text { @apply whitespace-pre-wrap break-words; font:14px/1.7 Arial,sans-serif; }
+  header { z-index:30; }
+  #lightbox { margin:auto;max-height:90dvh;overflow:auto; }
+  #lightbox::backdrop { background:#3a2825b3; }
+  #lightbox img { max-height:65dvh;width:auto;margin:0 auto 20px; }
+  #lightbox .close { @apply min-h-11 min-w-11; }
+  .image-failed { min-height:180px; }
+  .image-failed::before { content:'Imagen de referencia no disponible';position:absolute;inset:0;display:grid;place-items:center;font-size:12px;color:var(--muted); }
+  .bottom-mobile { padding-bottom:max(12px,env(safe-area-inset-bottom)); }
+  table { min-width:760px; }
+  tbody th { font-family:Georgia,serif;font-size:16px; }
+  .legal h2 { margin-top:35px; }
+  @media (min-width:761px) and (max-width:1100px) {
+    .package-grid, .gallery, .editorial-grid { @apply grid-cols-2; }
+    .service-grid { @apply grid-cols-3; }
+    .contact-grid, .universe-cards { @apply grid-cols-1; }
+    .split { gap:35px; }
+    header { gap:15px;padding:0 24px; }
+    nav { gap:14px;font-size:12px; }
+    .logo { font-size:34px; }
+  }
+  @media (max-width:900px) {
+    .menu-toggle { display:block;background:none;border:1px solid var(--line);padding:10px 16px;border-radius:30px;min-height:44px;font-size:13px; }
+    nav { display:none;position:absolute;top:100%;left:0;right:0;background:var(--ivory);padding:25px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px;font-size:16px;box-shadow:0 15px 20px #3a282510; }
+    nav.open { display:flex; }
+  }
+  @media (max-width:760px) {
+    .service-grid { @apply grid-cols-2; }
+    .package-grid, .duo, .split, .gallery, .editorial-grid, .contact-grid, .universe-cards { @apply grid-cols-1; }
+    nav { top:100%; }
+    .service-card .photo { height:170px; }
+    .service-card:last-child .photo { height:100%; }
+    .feature > .photo { height:265px;grid-row:1; }
+    .feature > div { grid-row:2; }
+    .gallery-item .photo, .gallery-item:nth-child(3n+2) .photo { height:440px; }
+    .editorial-grid .photo { height:370px; }
+    .booking-art > .photo { height:270px; }
+    .form-card .actions { gap:10px; }
+    .form-card .actions .button { flex:1; }
+    .hero h1 { font-size:clamp(39px,11.5vw,45px); }
+    .hero-copy { padding-left:22px;padding-right:22px; }
+    .page-intro h1 { font-size:clamp(36px,11vw,43px); }
+    .bottom-mobile { z-index:40; }
+    footer { padding-bottom:calc(100px + env(safe-area-inset-bottom)); }
+    #lightbox { max-width:calc(100vw - 24px);padding:45px 16px 16px; }
+  }
+  @media (max-width:360px) {
+    .section-head { flex-wrap:wrap; }
+    .service-card h3 { font-size:19px; }
+    .service-card > div { padding:12px; }
+    .form-card { padding:22px 14px; }
+    .step h3 { font-size:20px; }
+    .prototype { font-size:9px;letter-spacing:.5px; }
+  }
+}

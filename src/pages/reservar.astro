@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro';
+import Photo from '../components/Photo.astro';
+import BookingWizard from '../components/BookingWizard.astro';
+---
+<Layout title="Consulta de reserva" description="Prepara tu consulta de disponibilidad en tres pasos: evento, contacto y revisión. Copia el mensaje o abre WhatsApp cuando esté configurado."><Intro label="Reservas" title="Empecemos a diseñar<br><em>tu momento.</em>" description="Esta consulta permite revisar disponibilidad y preparar una propuesta. Tu cita se confirma después de acordar los detalles."/><section class="section booking-layout"><aside class="booking-art"><Photo id="studio" alt="Atelier de belleza conceptual, inspirado en la estética del estudio" eager/><div><span class="eyebrow">Tu look empieza con una conversación</span><h3>Un momento para escucharte.</h3><p>Cuéntanos la ocasión, el lugar y cómo quieres verte. Coordinaremos una propuesta para ti.</p><ul class="checks"><li>Consulta sin crear una cuenta</li><li>Paquete y extras personalizados</li><li>Confirmación directa con el equipo</li></ul></div></aside><BookingWizard/></section></Layout>

@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Intro from '../../components/Intro.astro';
+import PackageCard from '../../components/PackageCard.astro';
+import CTA from '../../components/CTA.astro';
+import {packages,packageRules} from '../../content/business';
+const filters = [['todos','Todos'],['beauty','Beauty'],['bridal','Novias'],['xv','Quinceañeras'],['grupal','Grupos']];
+---
+<Layout title="Paquetes de maquillaje y peinado" description="Compara siete experiencias Beauty, Bridal, XV y grupales. Revisa servicios, pruebas, acompañantes y adicionales antes de consultar."><Intro label="Paquetes" title="Una experiencia<br><em>para cada momento.</em>" description="Compara las opciones y elige la que mejor acompaña tu evento. Cada propuesta se ajusta al lugar, al horario y a los servicios que necesitas."/>
+<section class="section"><div class="filter-row" role="group" aria-label="Filtrar paquetes">{filters.map(([id,t],i) => <button class:list={['chip',{'selected':i===0}]} data-package-filter={id} aria-pressed={i===0}>{t}</button>)}</div><p id="filter-status" class="sr-only" role="status">7 experiencias</p><div id="packages-results" class="package-grid">{packages.map(p => <PackageCard p={p}/>)}</div><div class="compare-wrap" tabindex="0" role="region" aria-label="Tabla comparativa, desplazable horizontalmente"><table><caption class="p-4 text-left font-serif text-2xl">Los detalles de un vistazo</caption><thead><tr><th scope="col">Experiencia</th><th scope="col">Protagonista</th><th scope="col">Prueba</th><th scope="col">Acompañantes</th><th scope="col">Retoques durante el evento</th></tr></thead><tbody>{packages.map(p => <tr><th scope="row"><a href={`/paquetes/${p.id}`}>{p.name} →</a></th><td>{packageRules(p).service === 'maquillaje' ? 'Maquillaje' : 'Maquillaje + peinado'}</td><td>{p.trial ? 'Para protagonista' : 'Adicional'}</td><td>{packageRules(p).companions ? `${packageRules(p).companions} con maquillaje` : 'No incluidos'}</td><td>{p.id === 'bridal-luxury' ? 'Bloque acordado' : 'Adicionales'}</td></tr>)}</tbody></table></div><p class="note">Los precios, traslados y horarios se confirman en la cotización. Los accesorios son aportados por la clienta. Los kits de retoque incluidos se detallan en cada experiencia.</p></section><CTA/>
+<script>
+const buttons = document.querySelectorAll<HTMLButtonElement>('[data-package-filter]');
+const cards = document.querySelectorAll<HTMLElement>('[data-universe]');
+buttons.forEach(button => button.addEventListener('click',() => {buttons.forEach(b => {b.classList.toggle('selected',b===button);b.setAttribute('aria-pressed',String(b===button));});let count=0;cards.forEach(card => {card.hidden = button.dataset.packageFilter !== 'todos' && card.dataset.universe !== button.dataset.packageFilter;if(!card.hidden)count++;});document.querySelector('#filter-status')!.textContent = `${count} experiencias en ${button.textContent}`;}));
+</script></Layout>

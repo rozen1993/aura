@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Intro from '../../components/Intro.astro';
+import Photo from '../../components/Photo.astro';
+import PackageCard from '../../components/PackageCard.astro';
+import CTA from '../../components/CTA.astro';
+import details from '../../content/serviceDetails.json';
+import {packages} from '../../content/business';
+export function getStaticPaths(){return Object.entries(details).map(([slug,detail]) => ({params:{slug},props:{detail,slug}}));}
+const {detail:s,slug} = Astro.props;
+const name = ({maquillaje:'Maquillaje',peinado:'Peinado',eventos:'Eventos especiales'} as Record<string,string>)[slug];
+const href = `/reservar?${slug === 'eventos' ? 'evento=evento&servicio=ambos' : 'servicio='+slug}`;
+const titles: Record<string,string> = {maquillaje:'Maquillaje profesional',peinado:'Peinado para eventos',eventos:'Maquillaje y peinado para eventos especiales'};
+---
+<Layout title={titles[slug]} description={s.desc}><Intro label={name} title={s.title} description={s.desc}/><section class="section split"><div class="portrait"><Photo id={s.img} alt={name} eager/></div><div class="body-copy"><span class="eyebrow">Hecho a tu medida</span><h2>Tu estilo,<br/>desde el primer detalle.</h2><p>Nos cuentas cómo quieres verte. El equipo te orienta para que el resultado se sienta coherente contigo.</p><ul class="checks">{s.items.map((x:string) => <li>{x}</li>)}</ul><div class="actions"><a class="button" href={href}>Consultar {name.toLowerCase()} ↗</a></div></div></section><div class="band"><section class="section"><div class="section-head"><h2>Encuentra tu inspiración</h2></div><div class="universe-cards">{s.styles.map(([h,t]:string[]) => <article><h3>{h}</h3><p>{t}</p></article>)}</div></section></div><section class="section"><div class="section-head"><h2>Experiencias recomendadas</h2><a href="/paquetes">Comparar →</a></div><div class="package-grid">{packages.slice(0,2).map(p => <PackageCard p={p}/>)}</div>{slug === 'peinado' && <p class="note">El peinado puede cotizarse como servicio individual. Cada propuesta confirma qué incluye.</p>}</section><CTA href={href}/></Layout>

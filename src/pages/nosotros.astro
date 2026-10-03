@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro';
+import Photo from '../components/Photo.astro';
+import CTA from '../components/CTA.astro';
+const values = [['Tu esencia','El punto de partida es tu estilo, tus facciones y tus preferencias.'],['Cada detalle','Maquillaje, peinado y accesorios se diseñan como un conjunto.'],['Una experiencia clara','Conoce el alcance y las condiciones antes de confirmar tu cita.']];
+---
+<Layout title="El estudio" description="Conoce nuestro enfoque: escuchar tus preferencias, diseñar contigo y coordinar una experiencia de maquillaje y peinado con claridad."><Intro label="El estudio" title="Tu belleza.<br><em>Nuestro arte.</em>" description="Una idea sencilla: un look especial debe sentirse tan bien como se ve."/><section class="section split"><div class="portrait"><Photo id="studio" alt="Inspiración de un atelier de belleza; espacio conceptual" eager/></div><div class="body-copy"><span class="eyebrow">Nuestra manera de crear</span><h2>Escuchar primero.<br/>Diseñar contigo.</h2><p>Queremos conocer tus gustos, tu ocasión y cómo deseas sentirte. De esa conversación nace el maquillaje y peinado que acompaña tu momento.</p><p>Cuidamos la armonía del look, la coordinación de tu preparación y la claridad de cada propuesta.</p><a class="button outline" href="/reservar">Cuéntanos tu idea ↗</a></div></section><div class="band"><section class="section"><div class="universe-cards">{values.map(([h,t]) => <article><h3>{h}</h3><p>{t}</p></article>)}</div></section></div><CTA/></Layout>

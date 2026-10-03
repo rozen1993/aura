@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Intro from '../../components/Intro.astro';
+import Photo from '../../components/Photo.astro';
+import Process from '../../components/Process.astro';
+import CTA from '../../components/CTA.astro';
+import {packages,priceLabel,packageRules,site} from '../../content/business';
+export function getStaticPaths(){return packages.map(p => ({params:{slug:p.id},props:{p}}));}
+const {p} = Astro.props;
+const packagePhotos: Record<string,string> = {social:'social',signature:'makeup','xv-experience':'xv',bridal:'hero','bridal-luxury':'novia','bride-tribe':'novia','sweet-xv-party':'xv'};
+const image = packagePhotos[p.id];
+const href = `/reservar?paquete=${p.id}`;
+---
+<Layout title={p.name} description={`${p.summary} ${p.audience}`}><Intro label="Paquetes" title={p.name} description={p.summary} packageDetail/><section class="section split"><div class="portrait"><Photo id={image} alt={`Experiencia ${p.name}`} eager/></div><div class="body-copy"><span class="eyebrow">{p.eyebrow}</span><h2>Tu experiencia,<br/>con cada detalle claro.</h2><p>{p.audience}</p><ul class="checks">{p.includes.map((x:string) => <li>{x}</li>)}</ul>{packageRules(p).minPeople > 1 && <p class="note">Para {packageRules(p).minPeople} personas en total: protagonista y {packageRules(p).companions} acompañantes con maquillaje. Personas extra se cotizan aparte.</p>}{p.id === 'bridal-luxury' && <p class="note">{site.luxuryRetouchHours ? `Bloque de retoques de ${site.luxuryRetouchHours} horas, sujeto al horario acordado.` : 'La duración del bloque de retoques debe acordarse antes de contratar.'}</p>}<p class="serif text-[27px] !text-[var(--ink)]">{priceLabel(p)}</p>{p.priceMode === 'desde' && p.price !== null && <p class="note">Precio base del paquete. El lugar, los traslados y los adicionales pueden incrementar el total de tu cotización.</p>}<div class="actions"><a class="button" href={href}>Consultar {p.name} ↗</a><a class="button outline" href="/paquetes">Comparar opciones</a></div></div></section><div class="band"><section class="section"><div class="duo"><div><span class="eyebrow">Adicionales</span><h3>Podemos completar tu experiencia.</h3><p>Consulta por pruebas adicionales, peinados para acompañantes, atención a domicilio, personas extra o bloques de retoque.</p></div><div><span class="eyebrow">Alcance del paquete</span><h3>Se cotiza por separado</h3><ul>{p.excludes.map((x:string) => <li>{x}</li>)}</ul><p class="note">La disponibilidad y las condiciones se confirman antes de reservar.</p></div></div></section></div><section class="section center"><span class="eyebrow">Así empieza</span><h2>Diseñemos tu momento.</h2><Process trial={p.trial}/></section><CTA href={href}/></Layout>

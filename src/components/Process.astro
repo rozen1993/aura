@@ -1,0 +1,5 @@
+---
+const {trial = false} = Astro.props;
+const steps = [['Nos conocemos','Nos cuentas tu evento, tus referencias y cómo quieres sentirte.'],[trial ? 'Probamos tu look' : 'Diseñamos tu look',trial ? 'Definimos maquillaje, peinado y accesorios en una prueba previa.' : 'Elegimos juntas el estilo, el maquillaje y el peinado.'],['Coordinamos cada detalle','Confirmamos el alcance, el lugar y tu horario de preparación.'],['Disfruta tu momento','Te acompañamos a vivir tu evento con un look que se siente tuyo.']];
+---
+<div class="steps">{steps.map(([title,text],i) => <article class="step"><b>{String(i+1).padStart(2,'0')}</b><h3>{title}</h3><p>{text}</p></article>)}</div>

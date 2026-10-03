@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro';
+import Photo from '../components/Photo.astro';
+import CTA from '../components/CTA.astro';
+import {site} from '../content/business';
+import gallery from '../content/gallery.json';
+import photos from '../content/photos.json';
+const visibleGallery = site.reviewMode ? gallery : gallery.filter(g => 'approved' in g && g.approved);
+---
+<Layout title="Galería de inspiración" description="Explora referencias de maquillaje, peinados, novias, quinceañeras y looks sociales. Encuentra inspiración para tu próximo momento."><Intro label="Galería" title="Un universo de<br><em>detalles hermosos.</em>" description="Explora nuestra dirección visual: maquillaje, peinados y looks para tus momentos especiales."/>
+<section class="section">{site.reviewMode && <p class="note mb-7">Una colección editorial de modelos y estilos creada con IA. Estas imágenes son ilustrativas y no representan clientas ni trabajos realizados por el estudio.</p>}{visibleGallery.length ? <><div class="filter-row" role="group" aria-label="Filtrar galería">{['Todos','Novias','Quinceañeras','Maquillaje','Peinados','Social'].map((x,i) => <button class:list={['chip',{'selected':i===0}]} data-gallery-filter={x} aria-pressed={i===0}>{x}</button>)}</div><p id="gallery-status" class="sr-only" role="status">{visibleGallery.length} imágenes</p><div class="gallery">{visibleGallery.map(g => <button class="gallery-item" data-category={g.category} data-image={g.id} data-src={photos[g.id as keyof typeof photos].src} data-title={g.name} aria-label={`Ampliar ${g.name}: ${g.category}`}><Photo id={g.id} alt={g.name} sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 400px"/><span>{g.name}</span><small class="eyebrow">{g.category}</small></button>)}</div></> : <p class="note">Estamos preparando nuestra galería de trabajos autorizados. Mientras tanto, cuéntanos el estilo que te gustaría explorar.</p>}</section>
+{site.reviewMode && <div class="band"><section class="section center"><span class="eyebrow">Vista de interacción</span><h2>La misma esencia.<br/><em>Un detalle diferente.</em></h2><p class="lead">Comparación ilustrativa creada con IA de la misma modelo, con y sin maquillaje. No representa un resultado real del estudio.</p><div class="beforeafter"><img src={photos.antes.src} srcset={photos.antes.srcset} sizes="(max-width: 760px) 100vw, 650px" width={photos.antes.width} height={photos.antes.height} style={`object-position:${photos.antes.focal}`} loading="lazy" alt="Antes: ejemplo de referencia"/><img class="after" src={photos.despues.src} srcset={photos.despues.srcset} sizes="(max-width: 760px) 100vw, 650px" width={photos.despues.width} height={photos.despues.height} style={`object-position:${photos.despues.focal}`} loading="lazy" alt="Después: ejemplo de referencia"/><div class="labels"><span>Antes · Ilustración IA</span><span>Después · Ilustración IA</span></div></div><div class="range-control"><label for="comparison">Desliza para comparar</label><input id="comparison" type="range" min="0" max="100" value="50" aria-valuetext="50% antes, 50% después"/></div></section></div>}
+<dialog id="lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description"><button class="close" aria-label="Cerrar imagen" autofocus>×</button><img alt="" width="800" height="1000"/><h2 id="lightbox-title" class="text-2xl"></h2><p id="lightbox-description"></p></dialog><CTA/>
+<script>
+const dialog = document.querySelector<HTMLDialogElement>('#lightbox')!;
+let trigger: HTMLButtonElement | null = null;
+document.querySelectorAll<HTMLButtonElement>('[data-image]').forEach(button => button.addEventListener('click',() => {
+trigger=button;const image=dialog.querySelector('img')!;image.src=button.dataset.src!;image.alt=button.querySelector('img')!.alt;
+dialog.querySelector('#lightbox-title')!.textContent=button.dataset.title!;
+dialog.querySelector('#lightbox-description')!.textContent=`${button.dataset.category} · ${button.querySelector('figcaption') ? 'Imagen ilustrativa creada con IA' : 'Galería'}`;
+dialog.showModal();
+}));
+dialog.querySelector('button')!.addEventListener('click',() => dialog.close());
+dialog.addEventListener('close',() => trigger?.focus());
+dialog.addEventListener('click',event => {if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+dialog.addEventListener('keydown',event => {if(event.key==='Tab'){event.preventDefault();dialog.querySelector<HTMLButtonElement>('button')!.focus();}});
+const filters=document.querySelectorAll<HTMLButtonElement>('[data-gallery-filter]');
+filters.forEach(button => button.addEventListener('click',() => {filters.forEach(b => {b.classList.toggle('selected',b===button);b.setAttribute('aria-pressed',String(b===button));});let count=0;document.querySelectorAll<HTMLElement>('[data-category]').forEach(card => {card.hidden=button.dataset.galleryFilter!=='Todos'&&button.dataset.galleryFilter!==card.dataset.category;if(!card.hidden)count++;});document.querySelector('#gallery-status')!.textContent=`${count} imágenes en ${button.textContent}`;}));
+document.querySelector<HTMLInputElement>('#comparison')?.addEventListener('input',event => {const input=event.target as HTMLInputElement;document.querySelector<HTMLElement>('.after')!.style.clipPath=`inset(0 0 0 ${input.value}%)`;input.setAttribute('aria-valuetext',`${input.value}% antes, ${100-Number(input.value)}% después`);});
+</script></Layout>

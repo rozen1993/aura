@@ -1,0 +1,6 @@
+---
+import {site} from '../content/business';
+interface Props { label: string; title: string; description: string; packageDetail?: boolean }
+const {label,title,description,packageDetail} = Astro.props;
+---
+<div class="page-intro"><div class="breadcrumb"><a href="/">Inicio</a> / {packageDetail ? <><a href="/paquetes">Paquetes</a> / {title}</> : label}</div><span class="eyebrow">{site.brand} · {label}</span><h1 set:html={title}/><p>{description}</p></div>

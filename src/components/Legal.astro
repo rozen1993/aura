@@ -1,0 +1,6 @@
+---
+import Intro from './Intro.astro';
+import {privacy,conditions} from '../content/legal';
+const {isPrivacy = false} = Astro.props;
+---
+<Intro label={isPrivacy ? 'Privacidad' : 'Condiciones'} title={isPrivacy ? 'Tu información,<br><em>con claridad.</em>' : 'Una experiencia clara,<br><em>desde el inicio.</em>'} description="Borrador editable para definir con los datos y condiciones reales del negocio."/><section class="section legal"><p class="note">Borrador para revisión. Este texto no es una política final aprobada del negocio. Antes de publicar, completa y valida la información aplicable.</p>{(isPrivacy ? privacy : conditions).map(([h,t]) => <><h2>{h}</h2><p>{t}</p></>)}</section>

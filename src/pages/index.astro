@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import Services from '../components/Services.astro';
+import PackageCard from '../components/PackageCard.astro';
+import Process from '../components/Process.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import {packages} from '../content/business';
+import gallery from '../content/gallery.json';
+---
+<Layout title="Maquillaje y peinado para tus momentos especiales" description="Descubre experiencias de maquillaje y peinado para novias, quinceañeras y eventos. Diseñemos un look con tu esencia en cada detalle.">
+<section class="hero"><div class="hero-copy"><span class="eyebrow">Maquillaje · Peinado · Eventos especiales</span><h1>Belleza para tus<br/>momentos <em>inolvidables.</em></h1><p>Maquillaje y peinado para novias, quinceañeras y eventos especiales. Un look pensado para ti, con tu esencia en cada detalle.</p><div class="actions"><a class="button" href="/reservar">Reserva ahora ↗</a><a class="button outline" href="/galeria">Ver nuestro universo</a></div><div class="benefits"><span>Asesoría de<br/>look personalizada</span><span>Maquillaje y<br/>peinado en armonía</span><span>Atención para<br/>tu ocasión especial</span></div></div><div class="hero-photo"><Photo id="hero" alt="Maquillaje y recogido de novia" eager focal="center 20%"/><div class="caption">Tu historia también<br/>se ve hermosa aquí.</div></div></section>
+<section class="section"><div class="section-head"><h2>Nuestros servicios</h2><a href="/servicios">Descubrir todos →</a></div><Services/></section>
+<section class="section !pt-0"><div class="duo"><article class="feature"><div><span class="eyebrow">Novias</span><h3>El look que soñaste.<br/>La novia que eres.</h3><p>Una experiencia que cuida tu estilo y cada detalle de tu gran día.</p><a class="link" href="/novias">Conocer Bridal →</a></div><Photo id="novia" alt="Novia con bouquet"/></article><article class="feature"><div><span class="eyebrow">Quinceañeras</span><h3>Brilla en tu<br/>momento único.</h3><p>Looks frescos y personalizados para celebrar siendo tú misma.</p><a class="link" href="/quinceaneras">Descubrir XV →</a></div><Photo id="xv" alt="Look de quinceañera"/></article></div></section>
+<section class="section !pt-0"><div class="section-head"><h2>Encuentra tu experiencia</h2><a href="/paquetes">Ver y comparar →</a></div><div class="package-grid">{packages.slice(0,4).map(p => <PackageCard p={p}/>)}</div></section>
+<div class="band"><section class="section center"><span class="eyebrow">Belleza diseñada para ti</span><h2>La misma esencia.<br/><em>Una versión más radiante.</em></h2><p class="lead">Partimos de tus facciones, tus gustos y tu ocasión. El objetivo es que te veas hermosa y te sientas tú.</p><Process/></section></div>
+<section class="section"><div class="section-head"><h2>Un poco de inspiración</h2><a href="/galeria">Explorar galería →</a></div><div class="editorial-grid">{gallery.slice(0,3).map(g => <a href="/galeria"><Photo id={g.id} alt={g.name}/><h3>{g.name}</h3><span class="eyebrow">{g.category}</span></a>)}</div></section>
+<section class="section !pt-0"><div class="section-head"><h2>Antes de tu cita</h2><a href="/preguntas-frecuentes">Más preguntas →</a></div><FAQ all={false}/></section><CTA title="Agenda un momento para ti."/>
+</Layout>

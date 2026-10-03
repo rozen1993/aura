@@ -1,0 +1,80 @@
+{
+  "maquillaje": {
+    "title": "Un maquillaje que<br><em>habla de ti.</em>",
+    "img": "makeup",
+    "desc": "De una piel fresca a una mirada intensa: diseñamos el equilibrio que mejor acompaña tu estilo y tu ocasión.",
+    "items": [
+      "Conversación sobre tu estilo y referencias",
+      "Preparación de piel según el look",
+      "Maquillaje personalizado de ojos, piel y labios",
+      "Pestañas opcionales según el look",
+      "Fijación final"
+    ],
+    "styles": [
+      [
+        "Natural luminoso",
+        "Una piel fresca, tonos suaves y un acabado ligero."
+      ],
+      [
+        "Soft glam",
+        "Definición sutil, ojos protagonistas y tonos en armonía."
+      ],
+      [
+        "Glam de evento",
+        "Un look con mayor intensidad, pensado para tu celebración."
+      ]
+    ]
+  },
+  "peinado": {
+    "title": "El detalle que<br><em>completa tu look.</em>",
+    "img": "peinado",
+    "desc": "Ondas, recogidos y semirecogidos que acompañan tus facciones, tu vestido y la personalidad de tu evento.",
+    "items": [
+      "Asesoría según tu cabello y referencias",
+      "Preparación y trabajo de textura",
+      "Diseño del peinado",
+      "Colocación de accesorios aportados, previa coordinación",
+      "Fijación y revisión final"
+    ],
+    "styles": [
+      [
+        "Ondas con movimiento",
+        "Una caída suave, elegante y con textura."
+      ],
+      [
+        "Recogidos románticos",
+        "Volumen y detalles que enmarcan tu rostro."
+      ],
+      [
+        "Semirecogidos",
+        "El equilibrio entre cabello suelto y un detalle especial."
+      ]
+    ]
+  },
+  "eventos": {
+    "title": "Cada celebración<br>merece <em>su momento.</em>",
+    "img": "social",
+    "desc": "Un look para graduaciones, cumpleaños, reuniones, galas o sesiones fotográficas.",
+    "items": [
+      "Asesoría según ocasión y vestuario",
+      "Opción de maquillaje o look completo",
+      "Coordinación del horario para estar lista",
+      "Servicios para grupos bajo cotización",
+      "Prueba o retoque como adicionales"
+    ],
+    "styles": [
+      [
+        "Graduaciones y fiestas",
+        "Tu estilo para una celebración memorable."
+      ],
+      [
+        "Invitadas de boda",
+        "Maquillaje y peinado en armonía con tu atuendo."
+      ],
+      [
+        "Fotografía y galas",
+        "Un look definido a partir del estilo de la sesión."
+      ]
+    ]
+  }
+}

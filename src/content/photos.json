@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "src": "/images/editorial/hero-1024.webp",
+    "srcset": "/images/editorial/hero-480.webp 480w, /images/editorial/hero-800.webp 800w, /images/editorial/hero-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "novia": {
+    "src": "/images/editorial/novia-1024.webp",
+    "srcset": "/images/editorial/novia-480.webp 480w, /images/editorial/novia-800.webp 800w, /images/editorial/novia-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "makeup": {
+    "src": "/images/editorial/makeup-1024.webp",
+    "srcset": "/images/editorial/makeup-480.webp 480w, /images/editorial/makeup-800.webp 800w, /images/editorial/makeup-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "xv": {
+    "src": "/images/editorial/xv-1024.webp",
+    "srcset": "/images/editorial/xv-480.webp 480w, /images/editorial/xv-800.webp 800w, /images/editorial/xv-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "peinado": {
+    "src": "/images/editorial/peinado-1024.webp",
+    "srcset": "/images/editorial/peinado-480.webp 480w, /images/editorial/peinado-800.webp 800w, /images/editorial/peinado-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "studio": {
+    "src": "/images/editorial/studio-1536.webp",
+    "srcset": "/images/editorial/studio-480.webp 480w, /images/editorial/studio-800.webp 800w, /images/editorial/studio-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "social": {
+    "src": "/images/editorial/social-1024.webp",
+    "srcset": "/images/editorial/social-480.webp 480w, /images/editorial/social-800.webp 800w, /images/editorial/social-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "antes": {
+    "src": "/images/editorial/antes-1024.webp",
+    "srcset": "/images/editorial/antes-480.webp 480w, /images/editorial/antes-800.webp 800w, /images/editorial/antes-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  },
+  "despues": {
+    "src": "/images/editorial/makeup-1024.webp",
+    "srcset": "/images/editorial/makeup-480.webp 480w, /images/editorial/makeup-800.webp 800w, /images/editorial/makeup-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focal": "50% 30%",
+    "illustrative": true
+  }
+}
